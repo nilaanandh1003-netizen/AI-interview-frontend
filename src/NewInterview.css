@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+.newInterview-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    padding: 20px;
+    font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+}
+
+.newInterview-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 460px;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.newInterview-brand {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    padding: 32px;
+    text-align: center;
+    color: white;
+}
+
+.newInterview-brand h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.newInterview-brand p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.newInterview-form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.newInterview-form h2 {
+    text-align: center;
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #1e293b;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.field-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.field-group input,
+.field-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: #1e293b;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.row {
+    display: flex;
+    gap: 14px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+    opacity: 0.92;
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #f8fafc;
+}

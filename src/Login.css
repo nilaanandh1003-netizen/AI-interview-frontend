@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    padding: 20px;
+    font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+
+    /* entrance animation: slide up + fade in */
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-brand {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    padding: 32px;
+    text-align: center;
+    color: white;
+}
+
+.login-brand h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.login-brand p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.login-form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #1e293b;
+}
+
+/* staggered fade-up for each form element */
+.login-form>* {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.login-form h2 {
+    animation-delay: 0.5s;
+}
+
+.login-form .input-group:nth-of-type(1) {
+    animation-delay: 0.4s;
+}
+
+.login-form .input-group:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.login-form .form-options {
+    animation-delay: 0.6s;
+}
+
+.login-form .submit-btn {
+    animation-delay: 0.7s;
+}
+
+.login-form .signup-text {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+    display: flex;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s,
+}
